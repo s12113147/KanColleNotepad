@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">       
+  <title>4-3練船筆記</title>
+  <link rel="shortcut icon" href="image/Favicon.ico" />
+  <style>
+	.imgHolder { 
+		width: 750px;
+		margin: auto;
+	}
+	.imgHolder input {
+		float: left;
+		outline:medium;
+	}
+	body{
+		background-color:#0e0e0e;
+	}
+  </style>
+</head>
+<body>
+	<p></p>
+	<div class="imgHolder">
+		<input type="image" src="image/map4-3_1.jpg"/>
+	</div>
+	
+	<div class="imgHolder">
+		<input type="image" src="image/map4-3_2-1.jpg"/>
+		<input type="image" src="image/map4-3_2-2-D.jpg" id="map43d" />
+		<input type="image" src="image/map4-3_2-3.jpg"/>
+	</div>
+	
+	<div class="imgHolder">
+		<input type="image" src="image/map4-3_3.jpg"/>
+	</div>
+	
+	<div class="imgHolder">
+		<input type="image" src="image/map4-3_4-1.jpg"/>
+		<input type="image" src="image/map4-3_4-2-F.jpg" id="map43f" />
+		<input type="image" src="image/map4-3_4-3.jpg"/>
+	</div>
+	
+	<div class="imgHolder">
+		<input type="image" src="image/map4-3_5-1.jpg"/>
+		<input type="image" src="image/map4-3_5-2-J.jpg" id="map43j" />
+		<input type="image" src="image/map4-3_5-3.jpg"/>
+	</div>
+	
+	<div class="imgHolder">
+		<input type="image" src="image/map4-3_6.jpg"/>
+	</div>
+	
+	<div class="imgHolder">
+		<input type="image" src="image/map4-3_7-1.jpg"/>
+		<input type="image" src="image/map4-3_7-2-k.jpg" id="map43k" />
+		<input type="image" src="image/map4-3_7-3.jpg"/>
+	</div>
+	
+	<div class="imgHolder">
+		<input type="image" src="image/map4-3_8.jpg"/>
+	</div>
+
+	<script>		
+		var tagInput = document.getElementsByTagName("input");
+		
+		for(var i = 0; i < tagInput.length; i++){
+			tagInput[i].addEventListener("click",function(){
+				changeImg();
+			});
+		}
+
+		function changeImg(){
+			var pointD = "image/map4-3_2-2-D.jpg";
+			var pointF = "image/map4-3_4-2-F.jpg";
+			var pointJ = "image/map4-3_5-2-J.jpg";
+			var pointK = "image/map4-3_7-2-k.jpg";
+			var bodyColor = "#0e0e0e";
+			
+			switch(event.srcElement.id){
+				case "map43d":
+					pointD = "image/map4-3_2-2-D_in.jpg";
+					bodyColor = "red";
+					break;
+				case "map43f":
+					pointF = "image/map4-3_4-2-F_in.jpg";
+					break;
+				case "map43j":
+					pointJ = "image/map4-3_5-2-J_in.jpg";
+					break;
+				case "map43k":
+					pointK = "image/map4-3_7-2-k_in.jpg";
+					bodyColor = "red";
+					break;
+			}
+			
+			document.querySelector("#map43d").src = pointD;
+			document.querySelector("#map43f").src = pointF;
+			document.querySelector("#map43j").src = pointJ;
+			document.querySelector("#map43k").src = pointK;
+			document.body.style.backgroundColor = bodyColor;
+		}
+	</script>
+</body>
+</html>
