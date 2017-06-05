@@ -1,0 +1,2 @@
+# KanColleNotepad
+艦娘
